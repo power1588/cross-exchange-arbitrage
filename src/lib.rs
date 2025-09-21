@@ -38,6 +38,14 @@ pub enum ArbitrageError {
     #[error("Data parsing error: {0}")]
     DataParsing(String),
     
+    /// Parse error
+    #[error("Parse error: {0}")]
+    ParseError(String),
+    
+    /// Not implemented error
+    #[error("Not implemented: {0}")]
+    NotImplemented(String),
+    
     /// Trading error
     #[error("Trading error: {0}")]
     Trading(String),

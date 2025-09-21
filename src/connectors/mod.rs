@@ -3,6 +3,9 @@
 pub mod traits;
 pub mod binance;
 pub mod bybit;
+pub mod futures;
+pub mod binance_futures;
+pub mod bybit_futures;
 
 pub use traits::*;
 pub use binance::BinanceConnector;

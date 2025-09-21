@@ -36,7 +36,7 @@ async fn main() -> Result<()> {
     strategy.run_with_executor(&mut executor).await?;
     
     // Get and display results
-    let results = executor.get_results();
+    let results = executor.get_results().await;
     info!("Simulation completed. Results: {:#?}", results);
     
     println!("Dry-run simulation completed successfully!");

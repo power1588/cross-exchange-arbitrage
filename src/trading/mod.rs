@@ -1,21 +1,12 @@
 //! Trading execution modules
 
-// Modules will be implemented in later phases
-// pub mod executor;
-// pub mod dry_run;
-// pub mod live_trading;
+pub mod dry_run;
+// pub mod executor; // Will be implemented later
+// pub mod live_trading; // Will be implemented later
 
-// pub use executor::*;
-// pub use dry_run::*;
-// pub use live_trading::*;
+pub use dry_run::{DryRunExecutor, Portfolio, PerformanceMetrics};
 
-/// Placeholder for dry-run trading executor (will be implemented in later phases)
-pub struct DryRunExecutor;
-
-/// Placeholder for live trading executor (will be implemented in later phases)
-pub struct LiveTradingExecutor;
-
-/// Placeholder results structure
+/// Results structure for execution summary
 #[derive(Debug)]
 pub struct ExecutionResults {
     /// Total trades executed
@@ -24,20 +15,8 @@ pub struct ExecutionResults {
     pub total_pnl: f64,
 }
 
-impl DryRunExecutor {
-    /// Create a new dry-run executor instance
-    pub async fn new(_config: crate::config::ArbitrageConfig) -> crate::Result<Self> {
-        Ok(Self)
-    }
-    
-    /// Get execution results (placeholder implementation)
-    pub fn get_results(&self) -> ExecutionResults {
-        ExecutionResults {
-            total_trades: 0,
-            total_pnl: 0.0,
-        }
-    }
-}
+/// Placeholder for live trading executor (will be implemented in later phases)
+pub struct LiveTradingExecutor;
 
 impl LiveTradingExecutor {
     /// Create a new live trading executor instance

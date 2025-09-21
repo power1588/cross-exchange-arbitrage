@@ -110,7 +110,7 @@ async fn run_dry_run(
     strategy.run_with_executor(&mut executor).await?;
     
     // Print results
-    let results = executor.get_results();
+    let results = executor.get_results().await;
     info!("Dry-run completed. Results: {:#?}", results);
     
     Ok(())

@@ -70,6 +70,37 @@ pub struct ExecutionConfig {
     pub allow_partial_fills: bool,
     /// Maximum retry attempts
     pub max_retry_attempts: u32,
+    /// Enable fee simulation (dry-run only)
+    #[serde(default)]
+    pub enable_fees: bool,
+    /// Maker fee rate (dry-run only)
+    #[serde(default)]
+    pub maker_fee: f64,
+    /// Taker fee rate (dry-run only)
+    #[serde(default)]
+    pub taker_fee: f64,
+    /// Simulate execution delays (dry-run only)
+    #[serde(default)]
+    pub simulate_delays: bool,
+    /// Simulate market impact (dry-run only)
+    #[serde(default)]
+    pub simulate_market_impact: bool,
+    /// Market impact factor (dry-run only)
+    #[serde(default)]
+    pub market_impact_factor: f64,
+    /// Partial fill probability (dry-run only)
+    #[serde(default)]
+    pub partial_fill_probability: f64,
+    /// Order rejection probability (dry-run only)
+    #[serde(default)]
+    pub rejection_probability: f64,
+    /// Minimum fill ratio for partial fills (dry-run only)
+    #[serde(default = "default_min_fill_ratio")]
+    pub min_fill_ratio: f64,
+}
+
+fn default_min_fill_ratio() -> f64 {
+    0.1
 }
 
 /// Monitoring configuration
@@ -299,6 +330,15 @@ impl Default for ArbitrageConfig {
                 order_size_fraction: 0.1,
                 allow_partial_fills: true,
                 max_retry_attempts: 3,
+                enable_fees: true,
+                maker_fee: 0.001,
+                taker_fee: 0.001,
+                simulate_delays: false,
+                simulate_market_impact: false,
+                market_impact_factor: 0.0001,
+                partial_fill_probability: 0.0,
+                rejection_probability: 0.0,
+                min_fill_ratio: 0.1,
             },
             monitoring: MonitoringConfig {
                 enable_metrics: true,

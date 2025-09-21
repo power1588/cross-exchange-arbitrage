@@ -17,4 +17,11 @@ impl ArbitrageStrategy {
     pub async fn new(_config: crate::config::ArbitrageConfig) -> crate::Result<Self> {
         Ok(Self)
     }
+    
+    /// Run the strategy with the given executor (placeholder implementation)
+    pub async fn run_with_executor<T>(&mut self, _executor: &mut T) -> crate::Result<()> {
+        // Placeholder implementation - will be implemented in later phases
+        tracing::info!("Running arbitrage strategy (placeholder)");
+        Ok(())
+    }
 }

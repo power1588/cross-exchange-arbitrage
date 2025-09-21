@@ -190,6 +190,7 @@ pub struct MarketDataConfig {
     /// Subscription streams/topics
     #[serde(default)]
     pub streams: Vec<String>,
+    /// Subscription topics (alternative to streams)
     #[serde(default)]
     pub topics: Vec<String>,
     /// Order book depth levels

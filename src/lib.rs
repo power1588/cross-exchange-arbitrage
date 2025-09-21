@@ -17,7 +17,7 @@ pub mod utils;
 pub use config::ArbitrageConfig;
 pub use strategy::ArbitrageStrategy;
 pub use connectors::{ExchangeConnector, Exchange};
-pub use data::{OrderBook, MarketData};
+pub use data::OrderBook;
 pub use trading::{DryRunExecutor, LiveTradingExecutor};
 
 /// Result type used throughout the application

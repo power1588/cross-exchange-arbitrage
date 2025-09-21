@@ -33,7 +33,7 @@ impl fmt::Display for Exchange {
 impl std::str::FromStr for Exchange {
     type Err = ArbitrageError;
     
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         match s.to_lowercase().as_str() {
             "binance" => Ok(Exchange::Binance),
             "bybit" => Ok(Exchange::Bybit),

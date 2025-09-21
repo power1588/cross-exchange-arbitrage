@@ -72,6 +72,7 @@ macro_rules! log_trade {
     };
 }
 
+/// Log spread information with structured fields
 #[macro_export]
 macro_rules! log_spread {
     ($level:ident, $symbol:expr, $exchange1:expr, $exchange2:expr, $spread_bps:expr, $($field:tt)*) => {
@@ -85,6 +86,7 @@ macro_rules! log_spread {
     };
 }
 
+/// Log position information with structured fields
 #[macro_export]
 macro_rules! log_position {
     ($level:ident, $exchange:expr, $symbol:expr, $position:expr, $($field:tt)*) => {
@@ -97,6 +99,7 @@ macro_rules! log_position {
     };
 }
 
+/// Log risk information with structured fields
 #[macro_export]
 macro_rules! log_risk {
     ($level:ident, $risk_type:expr, $value:expr, $threshold:expr, $($field:tt)*) => {

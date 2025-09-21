@@ -1,7 +1,7 @@
 //! Utility modules
 
 pub mod logger;
-pub mod metrics;
+// pub mod metrics; // Will be implemented later
 
 pub use logger::*;
-pub use metrics::*;
+// pub use metrics::*;

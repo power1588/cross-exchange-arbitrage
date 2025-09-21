@@ -8,8 +8,8 @@ license = "MIT"
 repository = "https://github.com/yourusername/cross-exchange-arbitrage"
 
 [dependencies]
-# HFTBacktest framework
-hftbacktest = { path = "../hftbacktest" }
+# HFTBacktest framework (temporarily disabled due to rustc version requirement)
+# hftbacktest = { path = "../hftbacktest/hftbacktest" }
 
 # Async runtime and utilities
 tokio = { version = "1.0", features = ["full"] }
@@ -66,6 +66,9 @@ dotenv = "0.15"
 # UUID generation
 uuid = { version = "1.5", features = ["v4", "serde"] }
 
+# Random number generation
+rand = "0.8"
+
 [dev-dependencies]
 # Testing utilities
 tokio-test = "0.4"
@@ -107,6 +110,7 @@ panic = "abort"
 opt-level = 1
 debug = true
 
-[[bench]]
-name = "strategy_benchmarks"
-harness = false
+# Benchmarks will be added later
+# [[bench]]
+# name = "strategy_benchmarks"
+# harness = false
